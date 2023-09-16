@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="Blue Purple and Black Modern Night Club Flyer_20230916_144537_0000.png"  />
+  <img src="Banner.jpg"  />
 </div>
 
 ###
