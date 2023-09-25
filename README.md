@@ -1,6 +1,5 @@
 <div align="center">
   <img src="banner3.jpg"  />
-  <img src="banner3i.jpg"  />
 </div>
 
 ###
