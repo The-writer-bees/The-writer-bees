@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up / Login Form</title>
+  <link rel="stylesheet" href="/login-signUp/style.css">
+  <link rel="icon" href="/images/favicon.ico" sizes="64x64" type="image/x-icon">
+
+</head>
+<body>
+	
+	<div class="main">
+		<link href="/css/bootstrap2.min.css" rel="stylesheet">
+
+        <link href="/css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="/css/templatemo-topic-listing.css" rel="stylesheet">
+		<nav class="navbar ">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<i class="bi-back"></i>
+					<span>ScholarX</span>
+				</a>
+
+				<div class="d-lg-none ms-auto me-4">
+					<span id="userName" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+				</div>
+
+				<button id="navbarbtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav ms-lg-5 me-lg-auto">
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="/">Home</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="/pages/AboutUs.html">About US</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="/courses/">Our services</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link click-scroll" href="/contact.html">Contact Us</a>
+						</li>
+						
+					</ul>
+					<div class="d-none d-lg-block">
+						<span id="userName2" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<div class="signup" id="signup">
+			<form id="signup-form">
+				<label for="chk" aria-hidden="true" style="color: orange;">Sign up</label>
+				<input style="border-radius: 400px;" type="text" name="username" placeholder="User name" required="">
+				<input type="email" name="email" style="border-radius: 400px;" placeholder="Email" required="">
+				<input type="password" name="password" style="border-radius: 400px;" placeholder="Password" required="">
+				<div id="sub" class="">
+					<button style="border-radius: 40px;" type="submit">Sign up</button>
+				</div>
+				
+				<div id="switch" class="">
+					<span style="font-size: 20px;">Already registered? Login here</span>
+					<button style="border-radius: 40px;" onclick="switchLogin()">login</button>
+				</div>
+			</form>
+			<div class="devraj" id="loaderclock">
+				<div class="loader"></div></br>
+				<span>Wait.... We are registering you.</span>
+			</div>
+		</div>
+		<div class="signup devraj" id="login">
+			<form id="login-form">
+				<label for="chk" aria-hidden="true" style="color: orange;">Login</label>
+				<input type="email" name="email" placeholder="Email" required="">
+				<input type="password" name="password" placeholder="Password" required="">
+				<div class="" id="sub2">
+					<button style="border-radius: 40px;" type="submit">Login</button>
+				</div>
+				<div id="switch2" class="">
+					<span style="font-size: 20px;">New User? Sign Up</span>
+					<button style="border-radius: 40px;"  onclick="switchSignup()">Sign Up</button>
+				</div>
+			</form>
+			<div class="devraj" id="loaderclock2">
+				<div class="loader"></div></br>
+				<span>Wait.... We are logining you In.</span>
+			</div>
+		</div>
+	</div>
+	<script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/custom.js"></script>
+</body>
+<script>
+	var nav=document.getElementById('navbarNav');
+	var navbtn=document.getElementById('navbarbtn');
+	navbtn.addEventListener('click',function(){
+		nav.classList.toggle('collapse');
+	})
+	let userName = localStorage.getItem('name');
+
+	// Check if the user's name is available
+	if (userName) {
+		// Update the content of the element with id "userName"
+		document.getElementById('userName').textContent = 'Welcome, ' + userName;
+		document.getElementById('userName2').textContent = 'Welcome, ' + userName;
+	}
+</script>
+<!-- Your HTML code -->
+
+<script>
+	let signupForm = document.getElementById("signup-form");
+	let loader = document.getElementById("loaderclock");
+	signupForm.addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  loader.classList.remove('devraj');
+	  document.getElementById('sub').classList.add('devraj');
+	  document.getElementById('switch').classList.add('devraj');
+  
+	  // Disable the submit button to prevent multiple submissions
+	  let submitButton = signupForm.querySelector('button[type="submit"]');
+	  submitButton.disabled = true;
+  
+	  let data = new FormData(signupForm);
+	  fetch('https://script.google.com/macros/s/AKfycbwZ_yukQaZkr5IM_9UkJ_kjC3xPNRBMzezKBItFfWEKavhWYPyA0K-Fh_jNTiumFgOA/exec', {
+		  method: 'POST',
+		  body: data
+		})
+		.then(res => res.text())
+		.then(responseData => {
+		  console.log(responseData);
+  
+		  // Check if the response contains "alreadyRegistered"
+		  if (responseData.includes("alreadyRegistered")) {
+			// Alert that the user is already registered and switch to the login form
+			alert("You are already registered. Please log in.");
+			document.getElementById('signup').classList.add('devraj');
+		    document.getElementById('login').classList.remove('devraj');
+		  } else {
+			// New registration, process the response as before
+			let parsedResponse = JSON.parse(responseData);
+			localStorage.setItem('userId', parsedResponse.userId);
+			localStorage.setItem('message', parsedResponse.message);
+			localStorage.setItem('name', parsedResponse.name);
+			localStorage.setItem('email', parsedResponse.email);
+			alert(parsedResponse.message + '\nYour user ID is: ' + parsedResponse.userId + '\nname: '+ parsedResponse.name + '\nemail: ' + parsedResponse.email);
+			signupForm.reset();
+			function checkRedirectAndRedirect() {
+				var redirectUrl = sessionStorage.getItem('redirectUrl');
+
+				// Check if there is a stored URL
+				if (redirectUrl) {
+					// Redirect to the stored URL
+					window.location.href = redirectUrl;
+
+					// Clear the stored URL from session storage
+					sessionStorage.removeItem('redirectUrl');
+				}else {
+					window.location.href = "https://thescholarx.netlify.app/";
+				}
+			}
+
+			// Call the function on page load
+			checkRedirectAndRedirect();
+		  }
+		})
+		.catch(error => console.error('Error:', error))
+		.finally(() => {
+		  // Re-enable the submit button after submission is complete
+		  submitButton.disabled = false;
+		});
+	});
+  </script>
+
+<script>
+	let loginForm = document.getElementById("login-form");
+	let loader2 = document.getElementById('loaderclock2')
+	loginForm.addEventListener('submit', (e) => {
+	  e.preventDefault();
+	  loader2.classList.remove('devraj');
+	  document.getElementById('sub2').classList.add('devraj');
+	  document.getElementById('switch2').classList.add('devraj');
+
+	  let data = new FormData(loginForm);
+	  fetch('https://script.google.com/macros/s/AKfycbxtk_1228GHC7cCbHyjz5ruZtVXYh1SzEoQ03DRiJFx0nJtyoMSw0xEcbcb0eG3n5HL/exec', {
+		  method: 'POST',
+		  body: data
+		})
+		.then(res => res.text())
+		.then(responseData => {
+		  console.log(responseData);
+		  loader2.classList.add('devraj');
+			document.getElementById('sub').classList.remove('devraj');
+			document.getElementById('switch').classList.remove('devraj');
+  
+		  // Check if the response contains "notRegistered"
+		  if (responseData.includes("notRegistered")) {
+			// Alert that the email is not registered
+			alert("This email is not registered. Please try Sign-up");
+            document.getElementById('login').classList.add('devraj');
+		    document.getElementById('signup').classList.remove('devraj');
+		} else {
+			// Parse the JSON response
+			let parsedResponse = JSON.parse(responseData);
+  
+			// Store user information in localStorage
+			localStorage.setItem('userId', parsedResponse.userId);
+			localStorage.setItem('name', parsedResponse.name);
+			localStorage.setItem('email', parsedResponse.email);
+  
+			// Alert user information
+			alert("Login Successful\nName: " + parsedResponse.name + "\nEmail: " + parsedResponse.email + "\nUserId: " + parsedResponse.userId);
+  
+			// Reset the login form
+			loginForm.reset();
+			function checkRedirectAndRedirect() {
+				var redirectUrl = sessionStorage.getItem('redirectUrl');
+
+				// Check if there is a stored URL
+				if (redirectUrl) {
+					// Redirect to the stored URL
+					window.location.href = redirectUrl;
+
+					// Clear the stored URL from session storage
+					sessionStorage.removeItem('redirectUrl');
+				}
+				else {
+					window.location.href = "https://thescholarx.netlify.app/";
+
+				}
+			}
+
+			// Call the function on page load
+			checkRedirectAndRedirect();
+		  }
+		})
+		.catch(error => console.error('Error:', error));
+	});
+  </script>
+  
+  <script>
+	function switchLogin(){
+		document.getElementById('signup').classList.add('devraj');
+		document.getElementById('login').classList.remove('devraj');
+	}
+	function switchSignup(){
+		document.getElementById('login').classList.add('devraj');
+		document.getElementById('signup').classList.remove('devraj');
+	}
+  </script>
+  <script>
+	function logout() {
+	localStorage.clear();
+	window.location.reload();
+	document.getElementById('userName2').textContent = '';
+	document.getElementById('userName').textContent = '';
+}
+</script>
+  
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Page Title -->
+    <title>Cybersecurity</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Explore in-depth insights into the world of cybersecurity with our latest blog post. Learn about the latest trends, best practices, and essential tips to keep your digital life secure. Stay informed and stay safe with The ScholarX.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.ico" sizes="64x64" type="image/x-icon">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Cybersecurity">
+    <meta property="og:description" content="Explore in-depth insights into the world of cybersecurity with our latest blog post. Learn about the latest trends, best practices, and essential tips to keep your digital life secure. Stay informed and stay safe with The ScholarX.">
+    <meta property="og:image" content="https://thescholarx.netlify.app/image/logo.png">
+    <meta property="og:url" content="https://thescholarx.netlify.app/blogs/cybersecurity">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="/css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="/css/templatemo-topic-listing.css" rel="stylesheet">
+
+
+   <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove iframe border */
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <i class="bi-back"></i>
+                <span>ScholarX</span>
+            </a>
+
+            <div class="d-lg-none ms-auto me-4">
+                <span id="userName" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+                <button id="LOGOUT" class="btn2 devraj" onclick="logout()">
+                    LOGOUT
+                </button>
+                <a id="LOGIN" class="btn2 devraj" style="text-align: center;" href="/login-signup/" onclick="storeCurrentPage()">
+                    LOGIN
+                </a>
+            </div>
+
+            <button id="navbarbtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/pages/AboutUs.html">About US</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/courses/">Our services</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/blogs/">Blogs</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/contact.html">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="/events/">Events</a>
+                    </li>
+                    
+                </ul>
+
+                <div class="d-none d-lg-block">
+                    <span id="userName2" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+                    <button id="LOGOUT2" class="btn2" onclick="logout()">
+                        LOGOUT
+                    </button>
+                    <a id="LOGIN2" class="btn2" style="text-align: center;" href="/login-signup/" onclick="storeCurrentPage()">
+                        LOGIN
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <iframe src="https://theindianbees.blogspot.com/search/label/cybersecurity" frameborder="0">
+        <style>
+            #header-wrapper{
+                display:none;
+            }
+        </style>
+    </iframe>
+    <script src="/js/jquery.sticky.js"></script>
+    <script src="/js/click-scroll.js"></script>
+    <script src="/js/custom.js"></script>
+</body>
+<script>
+    var nav=document.getElementById('navbarNav');
+    var navbtn=document.getElementById('navbarbtn');
+    navbtn.addEventListener('click',function(){
+        nav.classList.toggle('collapse');
+    })
+    let userName = localStorage.getItem('name');
+
+    // Check if the user's name is available
+    if (userName) {
+        // Update the content of the element with id "userName"
+        document.getElementById('userName').textContent = 'Welcome, ' + userName;
+        document.getElementById('userName2').textContent = 'Welcome, ' + userName;
+    }
+</script>
+
+<script>
+    function logout() {
+    localStorage.clear();
+    window.location.reload();
+    document.getElementById('LOGOUT').classList.add('devraj')
+    document.getElementById('LOGIN').classList.remove('devraj')
+    document.getElementById('LOGOUT2').classList.add('devraj')
+    document.getElementById('LOGIN2').classList.remove('devraj')
+    document.getElementById('userName').textContent = '';
+    document.getElementById('userName2').textContent = '';
+}
+
+    
+
+    // Check if the user ID is stored in local storage
+    let userId = localStorage.getItem('userId');
+    document.getElementById('LOGIN2').classList.add('devraj')
+    document.getElementById('LOGIN').classList.add('devraj')
+    document.getElementById('LOGOUT2').classList.add('devraj')
+    document.getElementById('LOGOUT').classList.add('devraj')
+
+    if (userId) {
+        document.getElementById('LOGOUT2').classList.remove('devraj')
+        document.getElementById('LOGOUT').classList.remove('devraj')
+    } else {
+        document.getElementById('LOGIN2').classList.remove('devraj')
+        document.getElementById('LOGIN').classList.remove('devraj')
+        storeCurrentPage();
+        window.location.href="https://thescholarx.netlify.app/login-signup/"
+    
+    }
+</script>
+</html>

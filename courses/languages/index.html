@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-site-verification" content="I8ryLPcbgMTRcuN6CpHJ5mEdmfOaKSBwMi_9FZ0ZqwU" />
+        <link href="/images/favicon.ico" rel="icon">
+
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Topics | Scholar-X</title>
+
+        <!-- CSS FILES -->        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans&display=swap" rel="stylesheet">
+                        
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="../../css/bootstrap-icons.css" rel="stylesheet">
+
+        <link href="../../css/templatemo-topic-listing.css" rel="stylesheet">
+<!--
+
+TemplateMo 590 topic listing
+
+https://templatemo.com/tm-590-topic-listing
+
+-->
+    </head>
+    
+    <body class="topics-listing-page" id="top">
+
+        <main>
+
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <a class="navbar-brand" href="/">
+                        <i class="bi-back"></i>
+                        <span>ScholarX</span>
+                    </a>
+
+                    <div class="d-lg-none ms-auto me-4">
+                        <span id="userName" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+                        <button id="LOGOUT" class="btn2 devraj" onclick="logout()">
+                            LOGOUT
+                        </button>
+                        <a id="LOGIN" class="btn2 devraj" style="text-align: center;" href="/login-signup/" onclick="storeCurrentPage()">
+                            LOGIN
+                        </a>
+                    </div>
+    
+                    <button id="navbarbtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-lg-5 me-lg-auto">
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/">Home</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/pages/AboutUs.html">About US</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/courses/">Our services</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/blogs/">Blogs</a>
+                            </li>
+    
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/contact.html">Contact Us</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link click-scroll" href="/events/">Events</a>
+                            </li>
+                            
+                        </ul>
+
+                        <div class="d-none d-lg-block">
+                            <span id="userName2" style="font-family: 'Pacifico', cursive; color: whitesmoke;"></span>
+                            <button id="LOGOUT2" class="btn2" onclick="logout()">
+                                LOGOUT
+                            </button>
+                            <a id="LOGIN2" class="btn2" style="text-align: center;" href="/login-signup/" onclick="storeCurrentPage()">
+                                LOGIN
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+
+            <header class="site-header d-flex flex-column justify-content-center align-items-center">
+                <div class="container">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-5 col-12">
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/">Homepage</a></li>
+
+                                    <li class="breadcrumb-item active" aria-current="page">Languages</li>
+                                </ol>
+                            </nav>
+
+                            <h2 class="text-white">Programming Languages</h2>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+
+            <section class="section-padding">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                    <li class="page-item">
+                                        <a class="page-link" href="/courses/topics/" aria-label="Previous">
+                                            <span aria-hidden="true">Prev</span>
+                                        </a>
+                                    </li>
+
+                                    <li class="page-item " aria-current="page">
+                                        <a class="page-link" href="/courses/">Popular</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="/courses/topics/">Topics</a>
+                                    </li>
+                                    
+                                    <li class="page-item active">
+                                        <a class="page-link" href="">Languages</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="/courses/books/">Books</a>
+                                    </li>
+
+                                    <li class="page-item">
+                                        <a class="page-link" href="/courses/notes/">Notes</a>
+                                    </li>
+                                    
+                                    <li class="page-item">
+                                        <a class="page-link" href="/courses/books/" aria-label="Next">
+                                            <span aria-hidden="true">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <div class="col-lg-12 col-12 text-center">
+                            <h3 class="mb-4" style="font-size: 50px;">Programming Languages</h3>
+                        </div>
+
+                        <div class="col-lg-8 col-12 mt-3 mx-auto">
+                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                                <div class="d-flex">
+                                    <img src="../../images/topics/undraw_Remote_design_team_re_urdx.png" class="custom-block-image img-fluid" alt="">
+
+                                    <div class="custom-block-topics-listing-info d-flex">
+                                        <div>
+                                            <h5 class="mb-2">C/C++</h5>
+
+                                            <p class="mb-0">Topic Listing includes home, listing, detail and contact pages. Feel free to modify this template for your custom websites.</p>
+
+                                            <a href="#" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-design rounded-pill ms-auto">14</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                                <div class="d-flex">
+                                    <img src="../../images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
+
+                                    <div class="custom-block-topics-listing-info d-flex">
+                                        <div>
+                                            <h5 class="mb-2">Python</h5>
+
+                                            <p class="mb-0">Visit TemplateMo website to download free CSS templates. Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
+
+                                            <a href="#" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-advertising rounded-pill ms-auto">30</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="custom-block custom-block-topics-listing bg-white shadow-lg mb-5">
+                                <div class="d-flex">
+                                    <img src="../../images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
+
+                                    <div class="custom-block-topics-listing-info d-flex">
+                                        <div>
+                                            <h5 class="mb-2">Java</h5>
+
+                                            <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit animi necessitatibus</p>
+
+                                            <a href="#" class="btn custom-btn mt-3 mt-lg-4">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-music rounded-pill ms-auto">20</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="section-padding section-bg">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-12 col-12">
+                            <h3 class="mb-4">Trending Topics</h3>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <a href="#">
+                                    <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">Cybersecurity</h5>
+
+                                            <p class="mb-0">"Stay one step ahead of cybercriminals with our robust cybersecurity services, ensuring your peace of mind in the digital age."</p>
+                                        </div>
+
+                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
+                                    </div>
+
+                                    <img src="../../images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 col-12 mt-3 mb-4 mb-lg-0">
+                            <div class="custom-block bg-white shadow-lg">
+                                <div class="d-flex">
+                                        <div>
+                                            <h5 class="mb-2">AI & Machine Learning</h5>
+
+                                            <p class="mb-0">"Master the art of AI and Machine Learning with our comprehensive courses. Gain insights, solve complex problems, and leverage the capabilities of machines to transform the way we live and work."</p>
+
+                                            <a href="#" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
+                                        </div>
+
+                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
+
+                                        <div class="social-share d-flex">
+                                            <p class="text-white me-4">Share:</p>
+
+                                            <ul class="social-icon">
+                                                <li class="social-icon-item">
+                                                    <a href="#" class="social-icon-link bi-twitter"></a>
+                                                </li>
+
+                                                <li class="social-icon-item">
+                                                    <a href="#" class="social-icon-link bi-facebook"></a>
+                                                </li>
+
+                                                <li class="social-icon-item">
+                                                    <a href="#" class="social-icon-link bi-pinterest"></a>
+                                                </li>
+                                            </ul>
+
+                                            <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
+                                        </div>
+                                </div>
+                                <img src="/images/businesswoman-using-tablet-analysis.jpg" class="custom-block-image img-fluid" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+
+		<div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+            <script src="/pages/js/main.js"></script>
+            
+            <link href="/pages/css/style.css" rel="stylesheet">
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Company</h4>
+                        <a class="btn btn-link" href="/pages/AboutUs.html">About Us</a>
+                        <a class="btn btn-link" href="/contact.html">Contact Us</a>
+                        <a class="btn btn-link" href="/pages/disclaimer.html">Disclaimer</a>
+                        <a class="btn btn-link" href="/pages/privacypolicy.html">Privacy Policy</a>
+                        <a class="btn btn-link" href="/pages/termsncondition.html">Terms & Condition</a>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contact</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Haridwar, Uttrakhand, India</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+916291388958</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info.scholarx@yahoo.com</p>
+                        <div class="d-flex pt-2">
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Opening</h4>
+                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <p>10AM - 08PM</p>
+                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <p>2PM - 06PM</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Copyright</h4>
+                        <p>Copyright © 2023 - 2023 www.thescholarx.netlify.app - All Rights Reserved.
+                            <br><br>Branch: <a rel="nofollow" href="https://thescholarx.netlify.app" target="_blank"><strong>ScholarX</strong></a><br> organization <a href="#"><strong>Engineer's Hub</strong></a></p>
+                        
+                        <!--<p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <div class="position-relative mx-auto" style="max-width: 400px;">
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- JAVASCRIPT FILES -->
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/jquery.sticky.js"></script>
+        <script src="/js/custom.js"></script>
+
+    </body>
+    <script>
+        var nav=document.getElementById('navbarNav');
+        var navbtn=document.getElementById('navbarbtn');
+        navbtn.addEventListener('click',function(){
+            nav.classList.toggle('collapse');
+        })
+        let userName = localStorage.getItem('name');
+
+        // Check if the user's name is available
+        if (userName) {
+            // Update the content of the element with id "userName"
+            document.getElementById('userName').textContent = 'Welcome, ' + userName;
+            document.getElementById('userName2').textContent = 'Welcome, ' + userName;
+        }
+    </script>
+    
+    <script>
+        function logout() {
+        localStorage.clear();
+        window.location.reload();
+        document.getElementById('LOGOUT').classList.add('devraj')
+        document.getElementById('LOGIN').classList.remove('devraj')
+        document.getElementById('LOGOUT2').classList.add('devraj')
+        document.getElementById('LOGIN2').classList.remove('devraj')
+        document.getElementById('userName').textContent = '';
+        document.getElementById('userName2').textContent = '';
+    }
+
+        
+
+        // Check if the user ID is stored in local storage
+        let userId = localStorage.getItem('userId');
+        document.getElementById('LOGIN2').classList.add('devraj')
+        document.getElementById('LOGIN').classList.add('devraj')
+        document.getElementById('LOGOUT2').classList.add('devraj')
+        document.getElementById('LOGOUT').classList.add('devraj')
+    
+        if (userId) {
+            document.getElementById('LOGOUT2').classList.remove('devraj')
+            document.getElementById('LOGOUT').classList.remove('devraj')
+        } else {
+            document.getElementById('LOGIN2').classList.remove('devraj')
+            document.getElementById('LOGIN').classList.remove('devraj')
+        
+        }
+    </script>
+</html>
